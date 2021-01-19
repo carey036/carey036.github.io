@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+    <link href="https://blog.xsnet.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="星索 Blog Atom">
+
+
+
+  
+
+
+<meta name="author" content="星索" />
+<meta name="description" content="解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题" />
+<meta name="keywords" content="Blog, Gridea, use.fontawesome.com">
+
+
+<meta property="og:site_name" content="星索 Blog"/>
+<meta property="og:title" content="Gridea主题修复"/>
+<meta property="og:description" content="解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./grideazhu-ti-xiu-fu.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-01-18 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/xing-suo.html">
+<meta property="article:section" content="杂项"/>
+<meta property="article:tag" content="Blog"/>
+<meta property="article:tag" content="Gridea"/>
+<meta property="article:tag" content="use.fontawesome.com"/>
+<meta property="og:image" content="">
+
+  <title>星索 Blog &ndash; Gridea主题修复</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="星索 Blog" title="星索 Blog">
+      </a>
+
+      <h1>
+        <a href=".">星索 Blog</a>
+      </h1>
+
+<p>发现生活，记录成长</p>
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-Another social link" href="#" target="_blank">
+              <i class="fab fa-Another social link"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href=".">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://blog.xsnet.top/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="grideazhu-ti-xiu-fu">Gridea主题修复</h1>
+    <p>
+      Posted on 周一 18 一月 2021 in <a href="./category/za-xiang.html">杂项</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <p>因use.fontawesome.com疑似被墙，所以调用all.css的主题会导致加载时间过长，导致博客访问速度变慢，下面是解决方案：</p>
+<ol>
+<li>
+<p>打开Gridea，点击左下角设置<img alt="image-20210119123517166" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123517166.png"></p>
+</li>
+<li>
+<p>查看【站点源文件路径】，在资源管理器中打开路径</p>
+</li>
+</ol>
+<p><img alt="image-20210119123553739" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123553739.png"></p>
+<p><img alt="image-20210119123611561" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123611561.png"></p>
+<ol>
+<li>
+<p>依次点击[themes]-&gt;[正在使用的theme名称]-&gt;[templates]-&gt;[_blocks]或者[includes]<img alt="image-20210119123822628" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123822628.png"></p>
+</li>
+<li>
+<p>使用记事本打开[head.ejs]，找到【\&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">】并删除<img alt="image-20210119124016496" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119124016496.png"></p>
+</li>
+<li>重新发布</li>
+</ol>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/blog.html">Blog</a>
+      <a href="./tag/gridea.html">Gridea</a>
+      <a href="./tag/usefontawesomecom.html">use.fontawesome.com</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 星索 Blog ",
+  "url" : ".",
+  "image": "",
+  "description": ""
+}
+</script>
+
+
+</body>
+</html>
