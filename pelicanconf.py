@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 
-AUTHOR = 'qq'
-SITENAME = 'test'
-SITEURL = ''
+AUTHOR = '星索'
+SITENAME = '星索 Blog'
+SITEURL = 'https://blog.xsnet.top'
 
 PATH = 'content'
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = 'Chinese (Simplified)'
 
@@ -18,17 +18,30 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# PLUGIN
+PLUGIN_PATH = "pelican-plugins"
+PLUGINS = ["render_math"]
+# Theme
+MAIN_MENU = True
+THEME = "pelican-themes/Flex"
+SITETITLE = "星索 Blog"
+SITESUBTITLE = "发现生活，记录成长"
+MENUITEMS = (
+    ("Archives", "/archives.html"),
+    ("Categories", "/categories.html"),
+    ("Tags", "/tags.html"),
+)
 # Blogroll
-LINKS = (('Pelican', 'https://getpelican.com/'),
-         ('Python.org', 'https://www.python.org/'),
-         ('Jinja2', 'https://palletsprojects.com/p/jinja/'),
-         ('You can modify those links in your config file', '#'),)
+LINKS = (
+        )
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+          ('Another social link', '#'),
+          
+          )
 
-DEFAULT_PAGINATION = False
+DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
