@@ -2,20 +2,20 @@
 <feed xmlns="http://www.w3.org/2005/Atom"><title>星索 Blog - 杂项</title><link href="https://blog.xsnet.top/" rel="alternate"></link><link href="https://blog.xsnet.top/feeds/za-xiang.atom.xml" rel="self"></link><id>https://blog.xsnet.top/</id><updated>2021-01-18T00:00:00+08:00</updated><subtitle>发现生活，记录成长</subtitle><entry><title>Gridea主题修复</title><link href="https://blog.xsnet.top/grideazhu-ti-xiu-fu.html" rel="alternate"></link><published>2021-01-18T00:00:00+08:00</published><updated>2021-01-18T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-01-18:/grideazhu-ti-xiu-fu.html</id><summary type="html">&lt;p&gt;解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题&lt;/p&gt;</summary><content type="html">&lt;p&gt;因use.fontawesome.com疑似被墙，所以调用all.css的主题会导致加载时间过长，导致博客访问速度变慢，下面是解决方案：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;打开Gridea，点击左下角设置&lt;img alt="image-20210119123517166" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123517166.png"&gt;&lt;/p&gt;
+&lt;p&gt;打开Gridea，点击左下角设置&lt;img alt="image-20210119123517166" src="\images\image-20210119123517166.png"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;查看【站点源文件路径】，在资源管理器中打开路径&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img alt="image-20210119123553739" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123553739.png"&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="image-20210119123611561" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123611561.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20210119123553739" src="\images\image-20210119123553739.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="image-20210119123611561" src="\images\image-20210119123611561.png"&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;依次点击[themes]-&amp;gt;[正在使用的theme名称]-&amp;gt;[templates]-&amp;gt;[_blocks]或者[includes]&lt;img alt="image-20210119123822628" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119123822628.png"&gt;&lt;/p&gt;
+&lt;p&gt;依次点击[themes]-&amp;gt;[正在使用的theme名称]-&amp;gt;[templates]-&amp;gt;[_blocks]或者[includes]&lt;img alt="image-20210119123822628" src="\images\image-20210119123822628.png"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;使用记事本打开[head.ejs]，找到【\&amp;lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"&gt;】并删除&lt;img alt="image-20210119124016496" src="C:\Users\carey\AppData\Roaming\Typora\typora-user-images\image-20210119124016496.png"&gt;&lt;/p&gt;
+&lt;p&gt;使用记事本打开[head.ejs]，找到【\&amp;lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"&gt;】并删除&lt;img alt="image-20210119124016496" src="\images\image-20210119124016496.png"&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;重新发布&lt;/li&gt;
 &lt;/ol&gt;</content><category term="杂项"></category><category term="Blog"></category><category term="Gridea"></category><category term="use.fontawesome.com"></category></entry></feed>
