@@ -37,7 +37,7 @@ LINKS = (
 
 # Social widget
 SOCIAL = (
-          ('Another social link', '#'),
+          ("rss", "https://blog.xsnet.top/feeds/all.atom.xml"),
           
           )
 

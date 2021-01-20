@@ -29,16 +29,27 @@
   
 
 
-    <meta name="author" content="星索" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="星索 Blog"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="星索 Blog"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="."/>
+<meta name="author" content="星索" />
+<meta name="description" content="解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题" />
+<meta name="keywords" content="Blog, Gridea, use.fontawesome.com">
 
-  <title>星索 Blog</title>
+
+<meta property="og:site_name" content="星索 Blog"/>
+<meta property="og:title" content="Gridea主题修复"/>
+<meta property="og:description" content="解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./grideazhu-ti-xiu-fu.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-01-19 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/xing-suo.html">
+<meta property="article:section" content="杂项"/>
+<meta property="article:tag" content="Blog"/>
+<meta property="article:tag" content="Gridea"/>
+<meta property="article:tag" content="use.fontawesome.com"/>
+<meta property="og:image" content="">
+
+  <title>星索 Blog &ndash; Gridea主题修复</title>
 
 </head>
 <body class="light-theme">
@@ -78,52 +89,50 @@
 
     </nav>
 
-
-
-<article>
+<article class="single">
   <header>
-    <h2><a href="./grideazhu-ti-xiu-fu.html#grideazhu-ti-xiu-fu">Gridea主题修复</a></h2>
+      
+    <h1 id="grideazhu-ti-xiu-fu">Gridea主题修复</h1>
     <p>
       Posted on 周二 19 一月 2021 in <a href="./category/za-xiang.html">杂项</a>
 
-          &#8226; Tagged with
-              <a href="./tag/blog.html">Blog</a>,              <a href="./tag/gridea.html">Gridea</a>,              <a href="./tag/usefontawesomecom.html">use.fontawesome.com</a>
     </p>
   </header>
+
+
   <div>
-      <p>解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题</p>
-        <br>
-        <a class="btn"
-           href="./grideazhu-ti-xiu-fu.html#grideazhu-ti-xiu-fu">
-          Continue reading
-        </a>
+    <p>因use.fontawesome.com疑似被墙，所以调用all.css的主题会导致加载时间过长，导致博客访问速度变慢，下面是解决方案：</p>
+<ol>
+<li>
+<p>打开Gridea，点击左下角设置<img alt="image-20210119123517166" src=".\images\image-20210119123517166.png"></p>
+</li>
+<li>
+<p>查看【站点源文件路径】，在资源管理器中打开路径
+<img alt="image-20210119123553739" src=".\images\image-20210119123553739.png">
+<img alt="image-20210119123611561" src=".\images\image-20210119123611561.png"></p>
+</li>
+<li>
+<p>依次点击[themes]-&gt;[正在使用的theme名称]-&gt;[templates]-&gt;[_blocks]或者[includes]<img alt="image-20210119123822628" src=".\images\image-20210119123822628.png"></p>
+</li>
+<li>
+<p>使用记事本打开[head.ejs]，找到【\&lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">】并删除<img alt="image-20210119124016496" src=".\images\image-20210119124016496.png"></p>
+</li>
+<li>重新发布</li>
+</ol>
   </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./hong-guan-jing-ji-de-ji-ben-zhi-biao-ji-qi-heng-liang.html#hong-guan-jing-ji-de-ji-ben-zhi-biao-ji-qi-heng-liang">宏观经济的基本指标及其衡量</a></h2>
+  <div class="tag-cloud">
     <p>
-      Posted on 周一 18 一月 2021 in <a href="./category/jing-ji-xue.html">经济学</a>
-
-          &#8226; Tagged with
-              <a href="./tag/jing-ji-xue.html">经济学</a>,              <a href="./tag/hong-guan-jing-ji-xue.html">宏观经济学</a>,              <a href="./tag/zhuan-ye.html">专业</a>
+      <a href="./tag/blog.html">Blog</a>
+      <a href="./tag/gridea.html">Gridea</a>
+      <a href="./tag/usefontawesomecom.html">use.fontawesome.com</a>
     </p>
-  </header>
-  <div>
-      <p>国内生产总值的含义计算以及其他的一些经济学指标</p>
-        <br>
-        <a class="btn"
-           href="./hong-guan-jing-ji-de-ji-ben-zhi-biao-ji-qi-heng-liang.html#hong-guan-jing-ji-de-ji-ben-zhi-biao-ji-qi-heng-liang">
-          Continue reading
-        </a>
   </div>
+
+
+
+
+
 </article>
-
-  <div class="pagination">
-  </div>
-
-
 
     <footer>
 <p>&copy;  </p>
