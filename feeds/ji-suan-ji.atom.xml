@@ -4,23 +4,15 @@
 &lt;h2&gt;准备&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;项目地址 https://github.com/carey036/GenBooks.git&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;github账号&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;github账号&lt;/li&gt;
+&lt;li&gt;一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues&lt;/li&gt;
 &lt;li&gt;RSS订阅地址&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;开始操作&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;配置文件&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;&lt;/li&gt;
+&lt;li&gt;配置文件&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;{
        "title":"RSSDaily - GenBook",
@@ -72,8 +64,8 @@
            "epub":false,
            "mobi":false
        }
-   }&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置&lt;/p&gt;
+   }&lt;/code&gt;
+   修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -94,17 +86,18 @@
 &lt;td&gt;emailinfo&lt;/td&gt;
 &lt;td&gt;kindle订阅信息&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;feeds说明&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;key&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
+&lt;td&gt;feeds说明&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;key&lt;/td&gt;
+&lt;td&gt;说明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;----------&lt;/td&gt;
+&lt;td&gt;------------------------------------------------------------&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;name&lt;/td&gt;
 &lt;td&gt;【必须】该订阅的名称，显示在目录中&lt;/td&gt;
@@ -125,17 +118,18 @@
 &lt;td&gt;css&lt;/td&gt;
 &lt;td&gt;【可选】转换为书籍时如果有显示错误，如部分字体过小过大，可通过css调节&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;email说明&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;key&lt;/th&gt;
-&lt;th&gt;说明&lt;/th&gt;
+&lt;td&gt;email说明&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;key&lt;/td&gt;
+&lt;td&gt;说明&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;------&lt;/td&gt;
+&lt;td&gt;------------------------------------------------------------&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;enable&lt;/td&gt;
 &lt;td&gt;【必须】是否启用邮件发送，true/false&lt;/td&gt;
@@ -168,35 +162,20 @@
 &lt;td&gt;mobi&lt;/td&gt;
 &lt;td&gt;【必须】是否发送mobi，true/false&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;strong&gt;请根据以上信息自行配置文件，然后复制整个文件备用&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;建三个secret，name填上图三个即可，对应的Value为下表&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table&gt;
-&lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Name&lt;/th&gt;
-&lt;th&gt;Value&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;CONFIG&lt;/td&gt;
-&lt;td&gt;第三步中设置好的配置文件&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GITHUBEMAIL&lt;/td&gt;
-&lt;td&gt;登录github时使用的邮箱&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;GITHUBUSER&lt;/td&gt;
-&lt;td&gt;你的github用户名，点击头像，显示的Signed in as XXX&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;请根据以上信息自行配置文件，然后复制整个文件备用&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;ol&gt;
+&lt;li&gt;建三个secret，name填上图三个即可，对应的Value为下表
+   | Name        | Value                                              |
+   | ----------- | -------------------------------------------------- |
+   | CONFIG      | 第三步中设置好的配置文件                           |
+   | GITHUBEMAIL | 登录github时使用的邮箱                             |
+   | GITHUBUSER  | 你的github用户名，点击头像，显示的Signed in as XXX |&lt;/li&gt;
+&lt;li&gt;登录z.cn/myk，点击 首选项 -&amp;gt; 个人文档设置 -&amp;gt; 已认可的发件人电子邮箱列表，添加你的邮箱&lt;/li&gt;
 &lt;li&gt;点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;额外操作&lt;/h2&gt;

@@ -107,23 +107,15 @@
 <h2>准备</h2>
 <ol>
 <li>项目地址 https://github.com/carey036/GenBooks.git</li>
-<li>
-<p>github账号</p>
-</li>
-<li>
-<p>一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues</p>
-</li>
+<li>github账号</li>
+<li>一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues</li>
 <li>RSS订阅地址</li>
 </ol>
 <h2>开始操作</h2>
 <ol>
 <li>fork本项目https://github.com/carey036/GenBooks.git<img alt="forkl" src=".\images\forkl.jpg"></li>
-<li>
-<p>在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg"></p>
-</li>
-<li>
-<p>配置文件</p>
-</li>
+<li>在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg"></li>
+<li>配置文件</li>
 </ol>
 <p><code>{
        "title":"RSSDaily - GenBook",
@@ -175,8 +167,8 @@
            "epub":false,
            "mobi":false
        }
-   }</code></p>
-<p>修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置</p>
+   }</code>
+   修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置</p>
 <table>
 <thead>
 <tr>
@@ -197,17 +189,18 @@
 <td>emailinfo</td>
 <td>kindle订阅信息</td>
 </tr>
-</tbody>
-</table>
-<p>feeds说明</p>
-<table>
-<thead>
 <tr>
-<th>key</th>
-<th>说明</th>
+<td>feeds说明</td>
+<td></td>
 </tr>
-</thead>
-<tbody>
+<tr>
+<td>key</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>----------</td>
+<td>------------------------------------------------------------</td>
+</tr>
 <tr>
 <td>name</td>
 <td>【必须】该订阅的名称，显示在目录中</td>
@@ -228,17 +221,18 @@
 <td>css</td>
 <td>【可选】转换为书籍时如果有显示错误，如部分字体过小过大，可通过css调节</td>
 </tr>
-</tbody>
-</table>
-<p>email说明</p>
-<table>
-<thead>
 <tr>
-<th>key</th>
-<th>说明</th>
+<td>email说明</td>
+<td></td>
 </tr>
-</thead>
-<tbody>
+<tr>
+<td>key</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>------</td>
+<td>------------------------------------------------------------</td>
+</tr>
 <tr>
 <td>enable</td>
 <td>【必须】是否启用邮件发送，true/false</td>
@@ -271,35 +265,20 @@
 <td>mobi</td>
 <td>【必须】是否发送mobi，true/false</td>
 </tr>
-</tbody>
-</table>
-<p><strong>请根据以上信息自行配置文件，然后复制整个文件备用</strong></p>
-<ol>
-<li>建三个secret，name填上图三个即可，对应的Value为下表</li>
-</ol>
-<table>
-<thead>
 <tr>
-<th>Name</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CONFIG</td>
-<td>第三步中设置好的配置文件</td>
-</tr>
-<tr>
-<td>GITHUBEMAIL</td>
-<td>登录github时使用的邮箱</td>
-</tr>
-<tr>
-<td>GITHUBUSER</td>
-<td>你的github用户名，点击头像，显示的Signed in as XXX</td>
+<td><strong>请根据以上信息自行配置文件，然后复制整个文件备用</strong></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <ol>
+<li>建三个secret，name填上图三个即可，对应的Value为下表
+   | Name        | Value                                              |
+   | ----------- | -------------------------------------------------- |
+   | CONFIG      | 第三步中设置好的配置文件                           |
+   | GITHUBEMAIL | 登录github时使用的邮箱                             |
+   | GITHUBUSER  | 你的github用户名，点击头像，显示的Signed in as XXX |</li>
+<li>登录z.cn/myk，点击 首选项 -&gt; 个人文档设置 -&gt; 已认可的发件人电子邮箱列表，添加你的邮箱</li>
 <li>点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了</li>
 </ol>
 <h2>额外操作</h2>
