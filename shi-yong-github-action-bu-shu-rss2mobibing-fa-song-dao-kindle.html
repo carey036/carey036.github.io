@@ -115,59 +115,60 @@
 <p>1、fork本项目https://github.com/carey036/GenBooks.git<img alt="forkl" src=".\images\forkl.jpg">
 2、 在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg">
 3、 配置文件</p>
-<p><code>json
-   {
-       "title":"RSSDaily - GenBook",
-       "feeds":[
-           {
-               "name":"知乎热榜",
-               "url":"https://rsshub",
-               "saveimg":false,
-               "imgquality":100
-           },
-           {
-               "name":"example",
-               "url":"https://最后一个不要写逗号/",
-               "saveimg":false,
-               "imgquality":100,
-               "css":""
-           }
-       ],
-       "note":"请按照本格式书写feed源,saveimg是意思是是否保存图片（保存图片可能会导致排版错误），imgquality为压缩图片的比例，100表示不压缩，图片过多时，不压缩会导致文件较大",
-       "emailinfo":{
-           "note":"是否通过邮件发送",
-           "enable":false,
-           "to":"the email you want to receive",
-           "from":"your email",
-           "smtp":"you email smtp serve adress",
-           "port":25,
-           "pwd":"your pwd",
-           "note2":"是否上传epub或者mobi，仅当enable为true时可用，webdav同",
-           "epub":true,
-           "mobi":true
-       },
-       "webdav":{
-           "enable":false,
-           "server":"https://dav.jianguoyun.com/dav/",
-           "user":"@189.cn",
-           "pwd":"",
-           "epub":true,
-           "mobi":true
-       },
-       "telegram":{
-           "enable":false,
-           "token":"",
-           "chat_id":"",
-           "epub":true,
-           "mobi":true
-       },
-       "Github":{
-           "enable":false,
-           "epub":false,
-           "mobi":false
-       }
-   }</code>
-   修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+       <span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;RSSDaily - GenBook&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;feeds&quot;</span><span class="p">:[</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;知乎热榜&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;https://rsshub&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;saveimg&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;imgquality&quot;</span><span class="p">:</span><span class="mi">100</span>
+           <span class="p">},</span>
+           <span class="p">{</span>
+               <span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="s2">&quot;example&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="s2">&quot;https://最后一个不要写逗号/&quot;</span><span class="p">,</span>
+               <span class="nt">&quot;saveimg&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+               <span class="nt">&quot;imgquality&quot;</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span>
+               <span class="nt">&quot;css&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span>
+           <span class="p">}</span>
+       <span class="p">],</span>
+       <span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="s2">&quot;请按照本格式书写feed源,saveimg是意思是是否保存图片（保存图片可能会导致排版错误），imgquality为压缩图片的比例，100表示不压缩，图片过多时，不压缩会导致文件较大&quot;</span><span class="p">,</span>
+       <span class="nt">&quot;emailinfo&quot;</span><span class="p">:{</span>
+           <span class="nt">&quot;note&quot;</span><span class="p">:</span><span class="s2">&quot;是否通过邮件发送&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;to&quot;</span><span class="p">:</span><span class="s2">&quot;the email you want to receive&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="s2">&quot;your email&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;smtp&quot;</span><span class="p">:</span><span class="s2">&quot;you email smtp serve adress&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span>
+           <span class="nt">&quot;pwd&quot;</span><span class="p">:</span><span class="s2">&quot;your pwd&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;note2&quot;</span><span class="p">:</span><span class="s2">&quot;是否上传epub或者mobi，仅当enable为true时可用，webdav同&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;epub&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;mobi&quot;</span><span class="p">:</span><span class="kc">true</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;webdav&quot;</span><span class="p">:{</span>
+           <span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="s2">&quot;https://dav.jianguoyun.com/dav/&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;@189.cn&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;pwd&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;epub&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;mobi&quot;</span><span class="p">:</span><span class="kc">true</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;telegram&quot;</span><span class="p">:{</span>
+           <span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;chat_id&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="nt">&quot;epub&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+           <span class="nt">&quot;mobi&quot;</span><span class="p">:</span><span class="kc">true</span>
+       <span class="p">},</span>
+       <span class="nt">&quot;Github&quot;</span><span class="p">:{</span>
+           <span class="nt">&quot;enable&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;epub&quot;</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span>
+           <span class="nt">&quot;mobi&quot;</span><span class="p">:</span><span class="kc">false</span>
+       <span class="p">}</span>
+   <span class="p">}</span>
+</code></pre></div>
+
+<p>修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置</p>
 <table>
 <thead>
 <tr>
