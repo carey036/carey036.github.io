@@ -62,8 +62,8 @@
            "enable":false,
            "epub":false,
            "mobi":false
-       }
-   }&lt;/code&gt;
+       }\n
+   }\n&lt;/code&gt;
    修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -85,18 +85,17 @@
 &lt;td&gt;emailinfo&lt;/td&gt;
 &lt;td&gt;kindle订阅信息&lt;/td&gt;
 &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;feeds说明&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
 &lt;tr&gt;
-&lt;td&gt;feeds说明&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;key&lt;/td&gt;
-&lt;td&gt;说明&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;----------&lt;/td&gt;
-&lt;td&gt;------------------------------------------------------------&lt;/td&gt;
-&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;name&lt;/td&gt;
 &lt;td&gt;【必须】该订阅的名称，显示在目录中&lt;/td&gt;
@@ -117,18 +116,17 @@
 &lt;td&gt;css&lt;/td&gt;
 &lt;td&gt;【可选】转换为书籍时如果有显示错误，如部分字体过小过大，可通过css调节&lt;/td&gt;
 &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;email说明&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
 &lt;tr&gt;
-&lt;td&gt;email说明&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;key&lt;/td&gt;
-&lt;td&gt;说明&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;------&lt;/td&gt;
-&lt;td&gt;------------------------------------------------------------&lt;/td&gt;
-&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;enable&lt;/td&gt;
 &lt;td&gt;【必须】是否启用邮件发送，true/false&lt;/td&gt;
@@ -161,12 +159,9 @@
 &lt;td&gt;mobi&lt;/td&gt;
 &lt;td&gt;【必须】是否发送mobi，true/false&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;请根据以上信息自行配置文件，然后复制整个文件备用&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;请根据以上信息自行配置文件，然后复制整个文件备用&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;4、建三个secret，name填上图三个即可，对应的Value为下表&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
