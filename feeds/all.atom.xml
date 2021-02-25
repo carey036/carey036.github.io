@@ -9,12 +9,11 @@
 &lt;li&gt;RSS订阅地址&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;开始操作&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;&lt;/li&gt;
-&lt;li&gt;在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;&lt;/li&gt;
-&lt;li&gt;配置文件&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;{
+&lt;p&gt;1、fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;
+2、 在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;
+3、 配置文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;json
+   {
        "title":"RSSDaily - GenBook",
        "feeds":[
            {
@@ -168,16 +167,31 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;ol&gt;
-&lt;li&gt;建三个secret，name填上图三个即可，对应的Value为下表
-   | Name        | Value                                              |
-   | ----------- | -------------------------------------------------- |
-   | CONFIG      | 第三步中设置好的配置文件                           |
-   | GITHUBEMAIL | 登录github时使用的邮箱                             |
-   | GITHUBUSER  | 你的github用户名，点击头像，显示的Signed in as XXX |&lt;/li&gt;
-&lt;li&gt;登录z.cn/myk，点击 首选项 -&amp;gt; 个人文档设置 -&amp;gt; 已认可的发件人电子邮箱列表，添加你的邮箱&lt;/li&gt;
-&lt;li&gt;点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;4、建三个secret，name填上图三个即可，对应的Value为下表&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CONFIG&lt;/td&gt;
+&lt;td&gt;第三步中设置好的配置文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GITHUBEMAIL&lt;/td&gt;
+&lt;td&gt;登录github时使用的邮箱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GITHUBUSER&lt;/td&gt;
+&lt;td&gt;你的github用户名，点击头像，显示的Signed in as XXX&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5、登录z.cn/myk，点击 首选项 -&amp;gt; 个人文档设置 -&amp;gt; 已认可的发件人电子邮箱列表，添加你的邮箱&lt;/p&gt;
+&lt;p&gt;6、点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了&lt;/p&gt;
 &lt;h2&gt;额外操作&lt;/h2&gt;
 &lt;h3&gt;修改封面&lt;/h3&gt;
 &lt;p&gt;替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大&lt;/p&gt;

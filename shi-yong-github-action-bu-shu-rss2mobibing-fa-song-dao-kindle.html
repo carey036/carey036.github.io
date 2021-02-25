@@ -112,12 +112,11 @@
 <li>RSS订阅地址</li>
 </ol>
 <h2>开始操作</h2>
-<ol>
-<li>fork本项目https://github.com/carey036/GenBooks.git<img alt="forkl" src=".\images\forkl.jpg"></li>
-<li>在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg"></li>
-<li>配置文件</li>
-</ol>
-<p><code>{
+<p>1、fork本项目https://github.com/carey036/GenBooks.git<img alt="forkl" src=".\images\forkl.jpg">
+2、 在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg">
+3、 配置文件</p>
+<p><code>json
+   {
        "title":"RSSDaily - GenBook",
        "feeds":[
            {
@@ -271,16 +270,31 @@
 </tr>
 </tbody>
 </table>
-<ol>
-<li>建三个secret，name填上图三个即可，对应的Value为下表
-   | Name        | Value                                              |
-   | ----------- | -------------------------------------------------- |
-   | CONFIG      | 第三步中设置好的配置文件                           |
-   | GITHUBEMAIL | 登录github时使用的邮箱                             |
-   | GITHUBUSER  | 你的github用户名，点击头像，显示的Signed in as XXX |</li>
-<li>登录z.cn/myk，点击 首选项 -&gt; 个人文档设置 -&gt; 已认可的发件人电子邮箱列表，添加你的邮箱</li>
-<li>点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了</li>
-</ol>
+<p>4、建三个secret，name填上图三个即可，对应的Value为下表</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONFIG</td>
+<td>第三步中设置好的配置文件</td>
+</tr>
+<tr>
+<td>GITHUBEMAIL</td>
+<td>登录github时使用的邮箱</td>
+</tr>
+<tr>
+<td>GITHUBUSER</td>
+<td>你的github用户名，点击头像，显示的Signed in as XXX</td>
+</tr>
+</tbody>
+</table>
+<p>5、登录z.cn/myk，点击 首选项 -&gt; 个人文档设置 -&gt; 已认可的发件人电子邮箱列表，添加你的邮箱</p>
+<p>6、点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了</p>
 <h2>额外操作</h2>
 <h3>修改封面</h3>
 <p>替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大</p>
