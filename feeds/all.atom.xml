@@ -62,8 +62,8 @@
            "enable":false,
            "epub":false,
            "mobi":false
-       }\n
-   }\n&lt;/code&gt;
+       }
+   }&lt;/code&gt;
    修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
