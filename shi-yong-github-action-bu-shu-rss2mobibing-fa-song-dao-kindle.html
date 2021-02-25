@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+    <link href="https://blog.xsnet.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="星索 Blog Atom">
+
+
+
+  
+
+
+<meta name="author" content="星索" />
+<meta name="description" content="使用Github Action 部署RSS2MOBI并发送到kindle" />
+<meta name="keywords" content="github, github action, rss, kindle">
+
+
+<meta property="og:site_name" content="星索 Blog"/>
+<meta property="og:title" content="使用Github Action 部署RSS2MOBI并发送到kindle"/>
+<meta property="og:description" content="使用Github Action 部署RSS2MOBI并发送到kindle"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-02-25 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/xing-suo.html">
+<meta property="article:section" content="计算机"/>
+<meta property="article:tag" content="github"/>
+<meta property="article:tag" content="github action"/>
+<meta property="article:tag" content="rss"/>
+<meta property="article:tag" content="kindle"/>
+<meta property="og:image" content="">
+
+  <title>星索 Blog &ndash; 使用Github Action 部署RSS2MOBI并发送到kindle</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="星索 Blog" title="星索 Blog">
+      </a>
+
+      <h1>
+        <a href=".">星索 Blog</a>
+      </h1>
+
+<p>发现生活，记录成长</p>
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-rss" href="https://blog.xsnet.top/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href=".">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://blog.xsnet.top/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle">使用Github Action 部署RSS2MOBI并发送到kindle</h1>
+    <p>
+      Posted on 周四 25 二月 2021 in <a href="./category/ji-suan-ji.html">计算机</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h2>说明</h2>
+<p>之前一直是使用的kindleear，但后来发现kindlear有时候抓取的内容并不理想（版本很久了），更新的时候提示GAE需要绑定信用卡，但无奈暂时没有申请信用卡，故使用本项目进行RSS2MOBI。</p>
+<h2>准备</h2>
+<ol>
+<li>项目地址 https://github.com/carey036/GenBooks.git</li>
+<li>
+<p>github账号</p>
+</li>
+<li>
+<p>一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues</p>
+</li>
+<li>RSS订阅地址</li>
+</ol>
+<h2>开始操作</h2>
+<ol>
+<li>fork本项目https://github.com/carey036/GenBooks.git<img alt="forkl" src=".\images\forkl.jpg"></li>
+<li>
+<p>在已经fork好的项目里面，依次点击Setting -&gt; Secrets -&gt; New repository secret<img alt="secret" src=".\images\secret.jpg"></p>
+</li>
+<li>
+<p>配置文件</p>
+</li>
+</ol>
+<p><code>{
+       "title":"RSSDaily - GenBook",
+       "feeds":[
+           {
+               "name":"知乎热榜",
+               "url":"https://rsshub",
+               "saveimg":false,
+               "imgquality":100
+           },
+           {
+               "name":"example",
+               "url":"https://最后一个不要写逗号/",
+               "saveimg":false,
+               "imgquality":100,
+               "css":""
+           }
+       ],
+       "note":"请按照本格式书写feed源,saveimg是意思是是否保存图片（保存图片可能会导致排版错误），imgquality为压缩图片的比例，100表示不压缩，图片过多时，不压缩会导致文件较大",
+       "emailinfo":{
+           "note":"是否通过邮件发送",
+           "enable":false,
+           "to":"the email you want to receive",
+           "from":"your email",
+           "smtp":"you email smtp serve adress",
+           "port":25,
+           "pwd":"your pwd",
+           "note2":"是否上传epub或者mobi，仅当enable为true时可用，webdav同",
+           "epub":true,
+           "mobi":true
+       },
+       "webdav":{
+           "enable":false,
+           "server":"https://dav.jianguoyun.com/dav/",
+           "user":"@189.cn",
+           "pwd":"",
+           "epub":true,
+           "mobi":true
+       },
+       "telegram":{
+           "enable":false,
+           "token":"",
+           "chat_id":"",
+           "epub":true,
+           "mobi":true
+       },
+       "Github":{
+           "enable":false,
+           "epub":false,
+           "mobi":false
+       }
+   }</code></p>
+<p>修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td>生成的mobi杂志名称</td>
+</tr>
+<tr>
+<td>feeds</td>
+<td>你的订阅信息，其中css为可选选项</td>
+</tr>
+<tr>
+<td>emailinfo</td>
+<td>kindle订阅信息</td>
+</tr>
+</tbody>
+</table>
+<p>feeds说明</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>【必须】该订阅的名称，显示在目录中</td>
+</tr>
+<tr>
+<td>url</td>
+<td>【必须】订阅的url地址</td>
+</tr>
+<tr>
+<td>saveimg</td>
+<td>【必须】是否保存rss订阅中的图片，true/false</td>
+</tr>
+<tr>
+<td>imgquality</td>
+<td>【必须】图片压缩比例，100为不压缩，输入1-100整数即可</td>
+</tr>
+<tr>
+<td>css</td>
+<td>【可选】转换为书籍时如果有显示错误，如部分字体过小过大，可通过css调节</td>
+</tr>
+</tbody>
+</table>
+<p>email说明</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable</td>
+<td>【必须】是否启用邮件发送，true/false</td>
+</tr>
+<tr>
+<td>to</td>
+<td>【必须】你的kindle收件箱/你想接受文件的邮箱</td>
+</tr>
+<tr>
+<td>from</td>
+<td>【必须】你的邮箱</td>
+</tr>
+<tr>
+<td>smtp</td>
+<td>【必须】smtp服务器地址</td>
+</tr>
+<tr>
+<td>port</td>
+<td>【必须】smtp服务器端口</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>【必须】smtp服务器的密码，一般为邮箱密码，qq邮箱可能有所不同</td>
+</tr>
+<tr>
+<td>epub</td>
+<td>【必须】是否发送epub，true/false</td>
+</tr>
+<tr>
+<td>mobi</td>
+<td>【必须】是否发送mobi，true/false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>请根据以上信息自行配置文件，然后复制整个文件备用</strong></p>
+<ol>
+<li>建三个secret，name填上图三个即可，对应的Value为下表</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONFIG</td>
+<td>第三步中设置好的配置文件</td>
+</tr>
+<tr>
+<td>GITHUBEMAIL</td>
+<td>登录github时使用的邮箱</td>
+</tr>
+<tr>
+<td>GITHUBUSER</td>
+<td>你的github用户名，点击头像，显示的Signed in as XXX</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了</li>
+</ol>
+<h2>额外操作</h2>
+<h3>修改封面</h3>
+<p>替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大</p>
+<h3>修改推送时间</h3>
+<p>修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间<img alt="time" src=".\images\time.jpg"></p>
+<p>默认为早上六点和下午6点各推送一次</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/github.html">github</a>
+      <a href="./tag/github-action.html">github action</a>
+      <a href="./tag/rss.html">rss</a>
+      <a href="./tag/kindle.html">kindle</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 星索 Blog ",
+  "url" : ".",
+  "image": "",
+  "description": ""
+}
+</script>
+
+
+</body>
+</html>

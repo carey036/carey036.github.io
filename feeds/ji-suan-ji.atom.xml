@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>星索 Blog - 计算机</title><link href="https://blog.xsnet.top/" rel="alternate"></link><link href="https://blog.xsnet.top/feeds/ji-suan-ji.atom.xml" rel="self"></link><id>https://blog.xsnet.top/</id><updated>2021-02-25T00:00:00+08:00</updated><subtitle>发现生活，记录成长</subtitle><entry><title>使用Github Action 部署RSS2MOBI并发送到kindle</title><link href="https://blog.xsnet.top/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html" rel="alternate"></link><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-02-25:/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html</id><summary type="html">&lt;p&gt;使用Github Action 部署RSS2MOBI并发送到kindle&lt;/p&gt;</summary><content type="html">&lt;h2&gt;说明&lt;/h2&gt;
+&lt;p&gt;之前一直是使用的kindleear，但后来发现kindlear有时候抓取的内容并不理想（版本很久了），更新的时候提示GAE需要绑定信用卡，但无奈暂时没有申请信用卡，故使用本项目进行RSS2MOBI。&lt;/p&gt;
+&lt;h2&gt;准备&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;项目地址 https://github.com/carey036/GenBooks.git&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;github账号&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一个支持smtp的邮箱（仅测试过outlook，其他邮箱如果问题请提交Issues&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;RSS订阅地址&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;开始操作&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;配置文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;{
+       "title":"RSSDaily - GenBook",
+       "feeds":[
+           {
+               "name":"知乎热榜",
+               "url":"https://rsshub",
+               "saveimg":false,
+               "imgquality":100
+           },
+           {
+               "name":"example",
+               "url":"https://最后一个不要写逗号/",
+               "saveimg":false,
+               "imgquality":100,
+               "css":""
+           }
+       ],
+       "note":"请按照本格式书写feed源,saveimg是意思是是否保存图片（保存图片可能会导致排版错误），imgquality为压缩图片的比例，100表示不压缩，图片过多时，不压缩会导致文件较大",
+       "emailinfo":{
+           "note":"是否通过邮件发送",
+           "enable":false,
+           "to":"the email you want to receive",
+           "from":"your email",
+           "smtp":"you email smtp serve adress",
+           "port":25,
+           "pwd":"your pwd",
+           "note2":"是否上传epub或者mobi，仅当enable为true时可用，webdav同",
+           "epub":true,
+           "mobi":true
+       },
+       "webdav":{
+           "enable":false,
+           "server":"https://dav.jianguoyun.com/dav/",
+           "user":"@189.cn",
+           "pwd":"",
+           "epub":true,
+           "mobi":true
+       },
+       "telegram":{
+           "enable":false,
+           "token":"",
+           "chat_id":"",
+           "epub":true,
+           "mobi":true
+       },
+       "Github":{
+           "enable":false,
+           "epub":false,
+           "mobi":false
+       }
+   }&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;修改上面的title，feeds，emailinfo，如果想通过其他方式上传，也可以修改对应的配置&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;项目&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;生成的mobi杂志名称&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;feeds&lt;/td&gt;
+&lt;td&gt;你的订阅信息，其中css为可选选项&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;emailinfo&lt;/td&gt;
+&lt;td&gt;kindle订阅信息&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;feeds说明&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;【必须】该订阅的名称，显示在目录中&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;【必须】订阅的url地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;saveimg&lt;/td&gt;
+&lt;td&gt;【必须】是否保存rss订阅中的图片，true/false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;imgquality&lt;/td&gt;
+&lt;td&gt;【必须】图片压缩比例，100为不压缩，输入1-100整数即可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;css&lt;/td&gt;
+&lt;td&gt;【可选】转换为书籍时如果有显示错误，如部分字体过小过大，可通过css调节&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;email说明&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;key&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;enable&lt;/td&gt;
+&lt;td&gt;【必须】是否启用邮件发送，true/false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;to&lt;/td&gt;
+&lt;td&gt;【必须】你的kindle收件箱/你想接受文件的邮箱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;from&lt;/td&gt;
+&lt;td&gt;【必须】你的邮箱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;smtp&lt;/td&gt;
+&lt;td&gt;【必须】smtp服务器地址&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;【必须】smtp服务器端口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pwd&lt;/td&gt;
+&lt;td&gt;【必须】smtp服务器的密码，一般为邮箱密码，qq邮箱可能有所不同&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;epub&lt;/td&gt;
+&lt;td&gt;【必须】是否发送epub，true/false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mobi&lt;/td&gt;
+&lt;td&gt;【必须】是否发送mobi，true/false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;请根据以上信息自行配置文件，然后复制整个文件备用&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;建三个secret，name填上图三个即可，对应的Value为下表&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CONFIG&lt;/td&gt;
+&lt;td&gt;第三步中设置好的配置文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GITHUBEMAIL&lt;/td&gt;
+&lt;td&gt;登录github时使用的邮箱&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GITHUBUSER&lt;/td&gt;
+&lt;td&gt;你的github用户名，点击头像，显示的Signed in as XXX&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol&gt;
+&lt;li&gt;点击github中的 Action， 启用action，然后点击star，项目就已经完全配置好了。稍后就能收到kindle的推送了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;额外操作&lt;/h2&gt;
+&lt;h3&gt;修改封面&lt;/h3&gt;
+&lt;p&gt;替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大&lt;/p&gt;
+&lt;h3&gt;修改推送时间&lt;/h3&gt;
+&lt;p&gt;修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间&lt;img alt="time" src=".\images\time.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;默认为早上六点和下午6点各推送一次&lt;/p&gt;</content><category term="计算机"></category><category term="github"></category><category term="github action"></category><category term="rss"></category><category term="kindle"></category></entry></feed>
