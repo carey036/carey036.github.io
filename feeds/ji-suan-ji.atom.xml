@@ -192,5 +192,6 @@
 &lt;h3&gt;修改封面&lt;/h3&gt;
 &lt;p&gt;替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大&lt;/p&gt;
 &lt;h3&gt;修改推送时间&lt;/h3&gt;
-&lt;p&gt;修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间&lt;img alt="time" src=".\images\time.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间&lt;/p&gt;
+&lt;p&gt;&lt;img alt="time" src=".\images\time.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;默认为早上六点和下午6点各推送一次&lt;/p&gt;</content><category term="计算机"></category><category term="github"></category><category term="github action"></category><category term="rss"></category><category term="kindle"></category></entry></feed>

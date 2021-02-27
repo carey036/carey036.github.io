@@ -192,7 +192,8 @@
 &lt;h3&gt;修改封面&lt;/h3&gt;
 &lt;p&gt;替换代码文件中的 /config/cover.jpg，即可替换封面。注意：图片过大可能会导致生成文件体积过大&lt;/p&gt;
 &lt;h3&gt;修改推送时间&lt;/h3&gt;
-&lt;p&gt;修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间&lt;img alt="time" src=".\images\time.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;修改代码文件中.github/workflows/jobs.yml的 - cron: 后面的数字，以修改时间&lt;/p&gt;
+&lt;p&gt;&lt;img alt="time" src=".\images\time.jpg"&gt;&lt;/p&gt;
 &lt;p&gt;默认为早上六点和下午6点各推送一次&lt;/p&gt;</content><category term="计算机"></category><category term="github"></category><category term="github action"></category><category term="rss"></category><category term="kindle"></category></entry><entry><title>Gridea主题修复</title><link href="https://blog.xsnet.top/grideazhu-ti-xiu-fu.html" rel="alternate"></link><published>2021-01-19T00:00:00+08:00</published><updated>2021-01-19T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-01-19:/grideazhu-ti-xiu-fu.html</id><summary type="html">&lt;p&gt;解决Gridea主题中因含有use.fontawesome.com导致加载时间过长的问题&lt;/p&gt;</summary><content type="html">&lt;p&gt;因use.fontawesome.com疑似被墙，所以调用all.css的主题会导致加载时间过长，导致博客访问速度变慢，下面是解决方案：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
