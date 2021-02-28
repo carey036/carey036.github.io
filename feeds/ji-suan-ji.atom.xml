@@ -9,9 +9,9 @@
 &lt;li&gt;RSS订阅地址&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;开始操作&lt;/h2&gt;
-&lt;p&gt;1、fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;
-2、 在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;
-3、 配置文件&lt;/p&gt;
+&lt;p&gt;1、fork本项目https://github.com/carey036/GenBooks.git&lt;img alt="forkl" src=".\images\forkl.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;2、 在已经fork好的项目里面，依次点击Setting -&amp;gt; Secrets -&amp;gt; New repository secret&lt;img alt="secret" src=".\images\secret.jpg"&gt;&lt;/p&gt;
+&lt;p&gt;3、 配置文件&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="p"&gt;{&lt;/span&gt;
        &lt;span class="nt"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;RSSDaily - GenBook&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
        &lt;span class="nt"&gt;&amp;quot;feeds&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;:[&lt;/span&gt;
