@@ -4,7 +4,7 @@
 AUTHOR = '星索'
 SITENAME = '星索 Blog'
 SITEURL = 'https://blog.xsnet.top'
-
+ROBOTS = "index"
 PATH = 'content'
 
 TIMEZONE = 'Asia/Shanghai'
@@ -44,4 +44,4 @@ SOCIAL = (
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
