@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>星索 Blog</title><link href="https://blog.xsnet.top/" rel="alternate"></link><link href="https://blog.xsnet.top/feeds/all.atom.xml" rel="self"></link><id>https://blog.xsnet.top/</id><updated>2021-02-25T00:00:00+08:00</updated><subtitle>发现生活，记录成长</subtitle><entry><title>使用Github Action 部署RSS2MOBI并发送到kindle</title><link href="https://blog.xsnet.top/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html" rel="alternate"></link><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-02-25:/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html</id><summary type="html">&lt;p&gt;使用Github Action 部署RSS2MOBI并发送到kindle&lt;/p&gt;</summary><content type="html">&lt;h2&gt;说明&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>星索 Blog</title><link href="https://blog.xsnet.top/" rel="alternate"></link><link href="https://blog.xsnet.top/feeds/all.atom.xml" rel="self"></link><id>https://blog.xsnet.top/</id><updated>2021-03-10T00:00:00+08:00</updated><subtitle>发现生活，记录成长</subtitle><entry><title>【记录】fastboot接入电脑后出现press any key to shutdown</title><link href="https://blog.xsnet.top/ji-lu-fastbootjie-ru-dian-nao-hou-chu-xian-press-any-key-to-shutdown.html" rel="alternate"></link><published>2021-03-10T00:00:00+08:00</published><updated>2021-03-10T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-03-10:/ji-lu-fastbootjie-ru-dian-nao-hou-chu-xian-press-any-key-to-shutdown.html</id><summary type="html">&lt;p&gt;fastboot接入电脑后出现press any key to shutdown&lt;/p&gt;</summary><content type="html">&lt;h1&gt;&lt;/h1&gt;
+&lt;h2&gt;背景&lt;/h2&gt;
+&lt;p&gt;在刷rec的时候手机出现问题，无法进入系统，且fastboot接入电脑后手机出现press any key to shutdown，导致无法刷入rec。&lt;/p&gt;
+&lt;p&gt;在多次更换驱动，尝试安装各大品牌手机助手后，问题仍然没有得到解决。&lt;/p&gt;
+&lt;p&gt;在百度贴吧找到如下解决办法，未防止以后再次出现此情况，遂记录。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;https://tieba.baidu.com/p/6119443977?pn=2 60楼&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;解决办法&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;@echo off
+reg add &lt;span class="s2"&gt;&amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot;&lt;/span&gt; /v &lt;span class="s2"&gt;&amp;quot;osvc&amp;quot;&lt;/span&gt; /t REG_BINARY /d &lt;span class="s2"&gt;&amp;quot;0000&amp;quot;&lt;/span&gt; /f
+reg add &lt;span class="s2"&gt;&amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot;&lt;/span&gt; /v &lt;span class="s2"&gt;&amp;quot;SkipContainerIdQuery&amp;quot;&lt;/span&gt; /t REG_BINARY /d &lt;span class="s2"&gt;&amp;quot;01000000&amp;quot;&lt;/span&gt; /f
+reg add &lt;span class="s2"&gt;&amp;quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&amp;quot;&lt;/span&gt; /v &lt;span class="s2"&gt;&amp;quot;SkipBOSDescriptorQuery&amp;quot;&lt;/span&gt; /t REG_BINARY /d &lt;span class="s2"&gt;&amp;quot;01000000&amp;quot;&lt;/span&gt; /f
+
+
+pause
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;新建文本文档，复制如上代码，重命名为1.bat, 以管理员方式运行&lt;/p&gt;</content><category term="杂项"></category><category term="android"></category></entry><entry><title>使用Github Action 部署RSS2MOBI并发送到kindle</title><link href="https://blog.xsnet.top/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html" rel="alternate"></link><published>2021-02-25T00:00:00+08:00</published><updated>2021-02-25T00:00:00+08:00</updated><author><name>星索</name></author><id>tag:blog.xsnet.top,2021-02-25:/shi-yong-github-action-bu-shu-rss2mobibing-fa-song-dao-kindle.html</id><summary type="html">&lt;p&gt;使用Github Action 部署RSS2MOBI并发送到kindle&lt;/p&gt;</summary><content type="html">&lt;h2&gt;说明&lt;/h2&gt;
 &lt;p&gt;之前一直是使用的kindleear，但后来发现kindlear有时候抓取的内容并不理想（版本很久了），更新的时候提示GAE需要绑定信用卡，但无奈暂时没有申请信用卡，故使用本项目进行RSS2MOBI。&lt;/p&gt;
 &lt;h2&gt;准备&lt;/h2&gt;
 &lt;ol&gt;

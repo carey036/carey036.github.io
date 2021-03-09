@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="chinese (simplified)">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+
+    <link id="pygments-light-theme" rel="stylesheet" type="text/css"
+          href="./theme/pygments/github.min.css">
+
+
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/fontawesome.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/brands.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/solid.css">
+
+
+    <link href="https://blog.xsnet.top/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="星索 Blog Atom">
+
+
+
+  
+
+
+<meta name="author" content="星索" />
+<meta name="description" content="fastboot接入电脑后出现press any key to shutdown" />
+<meta name="keywords" content="android">
+
+
+<meta property="og:site_name" content="星索 Blog"/>
+<meta property="og:title" content="【记录】fastboot接入电脑后出现press any key to shutdown"/>
+<meta property="og:description" content="fastboot接入电脑后出现press any key to shutdown"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./ji-lu-fastbootjie-ru-dian-nao-hou-chu-xian-press-any-key-to-shutdown.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2021-03-10 00:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="./author/xing-suo.html">
+<meta property="article:section" content="杂项"/>
+<meta property="article:tag" content="android"/>
+<meta property="og:image" content="">
+
+  <title>星索 Blog &ndash; 【记录】fastboot接入电脑后出现press any key to shutdown</title>
+
+</head>
+<body class="light-theme">
+  <aside>
+    <div>
+      <a href=".">
+        <img src="./theme/img/profile.png" alt="星索 Blog" title="星索 Blog">
+      </a>
+
+      <h1>
+        <a href=".">星索 Blog</a>
+      </h1>
+
+<p>发现生活，记录成长</p>
+
+
+      <ul class="social">
+          <li>
+            <a  class="sc-rss" href="https://blog.xsnet.top/feeds/all.atom.xml" target="_blank">
+              <i class="fas fa-rss"></i>
+            </a>
+          </li>
+      </ul>
+    </div>
+
+  </aside>
+  <main>
+
+    <nav>
+      <a href=".">Home</a>
+
+      <a href="/archives.html">Archives</a>
+      <a href="/categories.html">Categories</a>
+      <a href="/tags.html">Tags</a>
+
+      <a href="https://blog.xsnet.top/feeds/all.atom.xml">Atom</a>
+
+    </nav>
+
+<article class="single">
+  <header>
+      
+    <h1 id="ji-lu-fastbootjie-ru-dian-nao-hou-chu-xian-press-any-key-to-shutdown">【记录】fastboot接入电脑后出现press any key to shutdown</h1>
+    <p>
+      Posted on 周三 10 三月 2021 in <a href="./category/za-xiang.html">杂项</a>
+
+    </p>
+  </header>
+
+
+  <div>
+    <h1></h1>
+<h2>背景</h2>
+<p>在刷rec的时候手机出现问题，无法进入系统，且fastboot接入电脑后手机出现press any key to shutdown，导致无法刷入rec。</p>
+<p>在多次更换驱动，尝试安装各大品牌手机助手后，问题仍然没有得到解决。</p>
+<p>在百度贴吧找到如下解决办法，未防止以后再次出现此情况，遂记录。</p>
+<blockquote>
+<p>https://tieba.baidu.com/p/6119443977?pn=2 60楼</p>
+</blockquote>
+<h2>解决办法</h2>
+<div class="highlight"><pre><span></span><code>@echo off
+reg add <span class="s2">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&quot;</span> /v <span class="s2">&quot;osvc&quot;</span> /t REG_BINARY /d <span class="s2">&quot;0000&quot;</span> /f
+reg add <span class="s2">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&quot;</span> /v <span class="s2">&quot;SkipContainerIdQuery&quot;</span> /t REG_BINARY /d <span class="s2">&quot;01000000&quot;</span> /f
+reg add <span class="s2">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\usbflags\18D1D00D0100&quot;</span> /v <span class="s2">&quot;SkipBOSDescriptorQuery&quot;</span> /t REG_BINARY /d <span class="s2">&quot;01000000&quot;</span> /f
+
+
+pause
+</code></pre></div>
+
+<p>新建文本文档，复制如上代码，重命名为1.bat, 以管理员方式运行</p>
+  </div>
+  <div class="tag-cloud">
+    <p>
+      <a href="./tag/android.html">android</a>
+    </p>
+  </div>
+
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy;  </p>
+<p>
+Built with <a href="http://getpelican.com" target="_blank">Pelican</a> using <a href="http://bit.ly/flex-pelican" target="_blank">Flex</a> theme
+</p>    </footer>
+  </main>
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " 星索 Blog ",
+  "url" : ".",
+  "image": "",
+  "description": ""
+}
+</script>
+
+
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c2b42a7b587f4e03879a61d3118410bf", "spa": true}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
